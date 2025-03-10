@@ -1,0 +1,40 @@
+package item;
+
+public class Items {
+	//Privated to prevent changes
+    private String name;
+    private int stocks;
+    private double price;
+
+    //getter function
+            public String getName() {
+              return this.name;
+            }
+
+            public int getStocks() {
+             return this.stocks;
+            }
+
+            public double getPrice() {
+                return this.price;
+            }
+    //constructor
+    public Items (String name, int stocks, double price) {
+        this.name = name;
+        this.stocks = stocks;
+        this.price = price;
+    }
+
+    //setter function
+        public void setName(String name){
+            this.name=name;
+        }
+    
+        public void setStocks(int stocks){
+            this.stocks=stocks;
+        }
+
+        public void setPrice(double price){
+            this.price=price;
+        }
+}
