@@ -1,0 +1,65 @@
+package item;
+import java.util.*;
+
+public class main {
+	//Allows code to take user input
+		public static Scanner in = new Scanner(System.in);
+
+	public static void main (String[] args){
+	  //Array is initialized
+        Items[] itemArray = new Items [10];
+   
+    itemArray[0] = new Items("Ruler", 10, 2.99);
+    itemArray[1] = new Items("Notebook", 5, 19.99);
+    itemArray[2] = new Items("Compass", 35, 5.99);
+    itemArray[3] = new Items("Novel", 20, 10.99);
+    itemArray[4] = new Items("Card", 45, 12.99);
+    
+        System.out.println("-----Catalog List-----------");
+    //loop checks the array
+        //the IF function detects if an index is null
+        for (Items itemArray1 : itemArray) {
+        	if (itemArray1 == null) {
+        		System.out.println("---There are no items past this point---");
+        			break; //prevents unnecessary prints
+        	}
+        	else {
+        	System.out.println("Item: " + itemArray1.getName() + ", Stock: " + itemArray1.getStocks() + ", Price: " + itemArray1.getPrice()); 
+       
+        	}
+        }
+    //Updating stocks, taking user Inputs
+     System.out.println("\nWhich item stock do you want to update?");
+     	String input = in.nextLine();
+     	
+     for (Items itemArray1 : itemArray) {
+    	if(itemArray1 == null) {
+    		System.out.println("There are no items with that name.");
+    		break;
+    	} 
+    	//compares a name in the item array, with the selected input
+    	if (itemArray1.getName().equals(input) ) {
+     		System.out.println("Item found: " + itemArray1.getName() + ", Stocks: " + itemArray1.getStocks() + ", Price: " + itemArray1.getPrice() );
+     		
+     	System.out.println("\nInsert new stock data for "+ itemArray1.getName() + ":" );
+     		itemArray1.setStocks(in.nextInt());
+     	System.out.println("The stocks of "+ itemArray1.getName() +" has been updated to "+ itemArray1.getStocks() +".");
+     		break;     		
+     	}
+     }
+     					//Prints out the updated list
+     				System.out.println("\n---Updated catalog list-------");
+   
+     							for (Items itemArray1 : itemArray) {
+     								if (itemArray1 == null) {
+     									System.out.println("---There are no items past this point---");
+     									break;
+     								}
+     								else {
+     									System.out.println("Item: " + itemArray1.getName() + ", Stock: " + itemArray1.getStocks() + ", Price: " + itemArray1.getPrice()); 
+     								}     
+   }
+     
+ }
+	
+}
